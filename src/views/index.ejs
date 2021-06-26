@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Server</title>
+</head>
+
+<body class="body">
+    <style>
+        .body {
+            padding-top: 10%;
+            height: 100%;
+            background-color: rgb(15, 15, 15);
+            color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 50%;
+            margin-top: 2%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-file-input {
+            color: transparent;
+        }
+
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .custom-file-input::before {
+            width: 100%;
+            height: 100px;
+            padding-top: 40px;
+            background: rgba(240, 248, 255, 0);
+            color: rgb(206, 209, 212);
+            border: 1px solid rgb(192, 196, 197);
+            border-radius: 3px;
+            font-family: inherit;
+            display: inline-block;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            outline: none;
+            content: '+';
+        }
+
+        .custom-file-input:hover::before {
+            transition-duration: 1s;
+            background: rgba(60, 64, 68, 0.247);
+            color: rgb(206, 209, 212);
+            border-color: rgba(12, 190, 182, 0)
+        }
+
+        .custom-file-input:active {
+            outline: 0;
+        }
+
+        .custom-file-input:active::before {
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+        }
+
+        .titulo {
+            display: flex;
+            font-family: 'Trade Winds', cursive;
+        }
+
+        @media (max-Width: 780px) {
+            .container {
+                width: 90%;
+                margin-top: 2%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+    <div class="titulo">
+        <h1>Server Drive</h1>
+    </div>
+    <div class="container mt-5">
+        <form action="/images/upload" class="d-flex flex-column" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" class="custom-file-input" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+            <button class="btn btn-outline-info mt-5">
+                Guardar
+            </button>
+        </form>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
